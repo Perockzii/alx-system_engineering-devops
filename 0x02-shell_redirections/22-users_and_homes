@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "$user_info" | awk -F: '{printf "%-20s %s\n", $1, $2}'
