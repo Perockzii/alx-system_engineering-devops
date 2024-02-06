@@ -6,15 +6,12 @@ if [ $# -eq 0 ]; then
 fi
 
 # extract IP from argument
-ip_address=$1
+IP_ADDRESS=$1
 
-# ping IP 5 times
-ping -c 5 "$ip_address"
+# Ping IP 5 times then exit
 
-# check exit status of ping command
-
-if ping -c 5 "$ip_address"; then
-	echo "ping completed successfuly."
+if ping -c 5 "$IP_ADDRESS"; then
+	echo "Ping completed successfully."
 else
-	echo "ping failed."
+	echo "Ping failed."
 fi
