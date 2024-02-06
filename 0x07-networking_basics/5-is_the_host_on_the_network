@@ -4,12 +4,16 @@ if [ $# -eq 0 ]; then
 	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
 	exit 1
 fi
+
 # extract IP from argument
 ip_address=$1
+
 # ping IP 5 times
 ping -c 5 "$ip_address"
-# check exit status of ping cmd
-if [ $? -eq 0 ]; then
+
+# check exit status of ping command
+
+if ping -c 5 "$ip_address"; then
 	echo "ping completed successfuly."
 else
 	echo "ping failed."
